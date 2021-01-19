@@ -1,0 +1,43 @@
+
+//Exposes the Event
+
+public delegate void Notify();  // delegate
+                    
+public class ExposesEvent
+{
+    public event Notify ActionCompleted;
+
+    public void StartEvent()
+    {
+        Console.WriteLine("Process Started!");
+        // some code here..
+        O ActionCompleted();
+    }
+
+    protected virtual void O ActionCompleted() 
+    {
+        //if ActionCompleted is not null then call delegate
+        ActionCompleted?.Invoke(); 
+    }
+}
+
+
+
+//Main Class: Handles the event
+
+
+class Program
+{
+    public static void Main()
+    {
+        ExposesEvent EE = new ExposesEvent();
+        EE ActionCompleted += EE ActionCompleted; 
+        EE.StartEvent();
+    }
+
+    // event handler
+    public static void bl ActionCompleted()
+    {
+        Console.WriteLine("Action Completed!");
+    }
+}
