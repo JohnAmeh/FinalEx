@@ -10,7 +10,6 @@ public class ExposesEvent
     public void StartEvent()
     {
         Console.WriteLine("Process Started!");
-        // some code here..
         O ActionCompleted();
     }
 
